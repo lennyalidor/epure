@@ -1,0 +1,30 @@
+ÉPURE — LICENCE D'UTILISATION (version de test)
+================================================
+
+Épure est une création originale de Lenny Alidor.
+© 2026 Lenny Alidor. Tous droits réservés.
+
+Le logiciel Épure (programme, interface, icônes dessinées, textes et documentation) est la
+propriété exclusive de Lenny Alidor, qui en est l'auteur et le seul développeur. Il est protégé
+par le droit d'auteur (Code de la propriété intellectuelle, articles L111-1 et suivants).
+
+CE QUI EST PERMIS
+  - Installer et utiliser Épure gratuitement, sur votre propre ordinateur, pour le tester.
+  - Faire des retours, signaler des problèmes, proposer des idées à l'auteur.
+
+CE QUI N'EST PAS PERMIS sans l'accord écrit de Lenny Alidor
+  - Redistribuer, revendre, louer ou mettre en ligne Épure, en tout ou en partie.
+  - Décompiler, désassembler ou tenter de retrouver le code source (sauf dans les cas que la loi
+    autorise expressément).
+  - Modifier Épure, en faire une version dérivée, ou retirer les mentions d'auteur.
+  - Présenter Épure, ou une partie de son travail, comme le vôtre.
+
+VERSION DE TEST
+  Épure est fourni « tel quel », sans garantie. L'auteur ne peut être tenu responsable des
+  problèmes liés à son utilisation. Épure ne demande pas de droits administrateur et se retire
+  complètement par « Épure - outils », choix 5.
+
+Marques : Windows est une marque de Microsoft. Épure n'est ni affilié à Microsoft, ni approuvé par
+Microsoft.
+
+Contact : Lenny Alidor, par la page GitHub du projet Épure.
