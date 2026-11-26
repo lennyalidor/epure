@@ -37,6 +37,7 @@
 - **Île** en haut, au centre :
   - musique et vidéos en cours (clic sur la pochette pour revenir à l'appli qui joue) ;
   - téléchargements, minuteur, bloc-notes, volume et luminosité ;
+  - **notifications** des applis (messages, mails, rappels…) à la place des bannières de Windows, avec les dernières reçues au survol ;
   - annonces (Wi-Fi, Bluetooth, batterie, mode Avion…).
 - **Applications** : toutes les applis en grille, recherche, dossiers par glisser-déposer.
 - **Centre de contrôle** : Wi-Fi, Bluetooth, Ne pas déranger, mode sombre, mode Avion, mode d'alimentation, éclairage nocturne, volume, luminosité…
@@ -149,7 +150,7 @@ Get-Content "$env:APPDATA\Epure\dock-natif.log" -Tail 200 | Set-Clipboard
 
 ## 7. Désinstaller
 
-**« Épure - outils »**, choix **`5`**. La barre des tâches de Windows revient. Tu peux aussi effacer tes réglages et le journal.
+**« Épure - outils »**, choix **`5`**. La barre des tâches de Windows et les bannières de notification de Windows reviennent. Tu peux aussi effacer tes réglages et le journal.
 
 ---
 
