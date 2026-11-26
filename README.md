@@ -5,7 +5,7 @@
 **Épure donne à Windows 11 une interface plus simple, plus pratique et plus utile au quotidien** : un Dock, une barre des menus en haut de l'écran, une île, la grille **Applications** et **Fichiers**, un explorateur de fichiers propre à Épure.
 
 - Aucun droit administrateur, ni pour l'installer ni pour l'utiliser.
-- Rien d'autre à installer.
+- Rien d'autre à installer : tout est inclus. Seule la lecture des images WebP, HEIC et AVIF demande des extensions gratuites de Microsoft, que l'installateur propose d'ajouter.
 - Windows reste intact : on le retrouve tel quel en arrêtant ou en désinstallant Épure.
 
 > Épure est en **phase de test**. Les versions sont publiées dans [Releases](../../releases), avec la description de leurs changements.
@@ -55,6 +55,7 @@
 - **« Choisir dans Fichiers »** sous les fenêtres Enregistrer et Ouvrir des autres applis.
 
 ### Outils
+- **Gestionnaire de tâches** (Ctrl + Maj + Échap) : remplace celui de Windows. Processus avec processeur, mémoire, disque et GPU, fin de tâche, mode efficacité, priorité ; courbes de performances ; applis au démarrage ; services.
 - **Exécuter** (Windows + R), **presse-papiers** avec historique (Windows + V).
 - **Projeter** (Windows + P), **recopie de l'écran** sans fil (Windows + K).
 - **Assistant** (Windows + Espace), **audio partagé** sur plusieurs sorties.
@@ -68,7 +69,10 @@ Tu as reçu deux fichiers : **`Installer-Epure.cmd`** et **`Installer-Epure.ps1`
 1. Mets-les dans le **même dossier**.
 2. Double-clique sur **`Installer-Epure.cmd`**, tape **`1`**, puis Entrée.
 3. Réponds **O** si tu veux qu'Épure démarre avec Windows.
-4. Épure se lance : le Dock, la barre des menus et l'île apparaissent.
+4. L'installateur vérifie les **compléments** (extensions d'image WebP, HEIF, AV1 et HEVC de Microsoft). S'il en manque, réponds **O** pour les installer : ça passe par le Microsoft Store, sans droit administrateur. Si l'installation automatique échoue, la page du Store s'ouvre : clique sur **Obtenir**.
+5. Épure se lance : le Dock, la barre des menus et l'île apparaissent.
+
+> Les compléments sont facultatifs : sans eux, Épure marche entièrement, seules les images .webp, .heic et .avif ne s'affichent pas. L'extension **HEVC** (pour la plupart des photos .heic de téléphone) est gratuite sur certains PC, sinon payante (0,99 €) : elle n'est jamais achetée sans toi.
 
 > Si Windows affiche **« Windows a protégé votre ordinateur »**, clique sur **Informations complémentaires**, puis sur **Exécuter quand même**. L'appli n'est simplement pas signée.
 
@@ -90,15 +94,16 @@ Tu peux ensuite supprimer les deux fichiers : l'installateur reste sur ton PC, s
 | `Windows + P` | Projeter |
 | `Windows + K` | Recopie de l'écran sans fil |
 | `Alt + Tab` | Sélecteur d'applis : `↑ ↓` choisissent la fenêtre, `Q` quitte l'appli, `H` la masque |
+| `Ctrl + Maj + Échap` | **Gestionnaire de tâches** d'Épure (processus, performances, démarrage, services) |
 | `Ctrl + Alt + Échap` | Forcer une appli à quitter |
 
 ---
 
 ## 4. Les mises à jour
 
-Quand une nouvelle version sort, une petite fenêtre apparaît en haut à droite : **« Épure X est disponible »**, avec un résumé de ce qui change.
+Épure vérifie s'il y a une nouvelle version **40 secondes après son démarrage, puis toutes les 6 heures**. Quand il y en a une, une petite fenêtre apparaît en haut à droite : **« Épure X est disponible »**, avec un résumé de ce qui change.
 - **Installer** : Épure télécharge la version, se remplace et redémarre tout seul.
-- **Plus tard** : elle ne te sera plus proposée avant la version suivante.
+- **Plus tard** : la fenêtre se ferme ; elle reviendra au prochain démarrage d'Épure (ou de ton PC).
 
 Le détail de chaque version est dans [Releases](../../releases), et dans le fichier `Nouveautes.md` du dossier d'Épure.
 
@@ -115,6 +120,8 @@ Ouvre **« Épure - outils »** dans le menu Démarrer :
 | **3** | **Installer la dernière version stable** (la plus sûre) |
 | **4** | Choisir une version dans la liste |
 | **5** | Désinstaller Épure |
+| **6** | Vérifier et installer les compléments (images WebP, HEIC, AVIF) |
+| **7** | **Démarrage rapide** : Épure apparaît plus tôt au démarrage du PC (désactivé au départ). Windows ne fait alors plus attendre les applis du démarrage : elles se lancent toutes en même temps, ce qui peut ralentir les premières secondes sur un PC modeste. |
 
 Après un retour en arrière, la version qui posait problème ne te sera plus proposée. La suivante le sera normalement.
 
@@ -122,13 +129,19 @@ Après un retour en arrière, la version qui posait problème ne te sera plus pr
 
 ## 6. Signaler un problème
 
-Envoie à Lenny Alidor une phrase sur ce qui s'est passé, et si possible la fin du journal. Dans PowerShell :
+Envoie à Lenny Alidor une phrase sur ce qui s'est passé, avec le journal d'Épure :
+
+1. Dans la barre des menus, en haut de l'écran, ouvre **Aide**.
+2. Clique sur **Copier le journal (pour signaler un problème)**.
+3. Colle-le (**Ctrl + V**) dans ton message.
+
+Si Épure s'est bloqué, il se relance tout seul en une trentaine de secondes, et l'île te le dit : c'est le bon moment pour copier le journal.
+
+**Épure ne s'affiche plus du tout ?** Copie le journal depuis PowerShell :
 
 ```powershell
-Get-Content "$env:APPDATA\Epure\dock-natif.log" -Tail 60 | Set-Clipboard
+Get-Content "$env:APPDATA\Epure\dock-natif.log" -Tail 200 | Set-Clipboard
 ```
-
-Colle ensuite le presse-papiers dans ton message.
 
 **Épure a disparu (plus de Dock ni de barre des menus) ?** Relance-le depuis le raccourci **Épure** du menu Démarrer ou du Bureau.
 
